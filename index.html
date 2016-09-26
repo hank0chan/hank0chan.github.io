@@ -1,27 +1,126 @@
 <!DOCTYPE html>
 <html>
-	<body>
-		<div align="center">
-			<h1>个人网站建立测试页面</h1>
-			<p>其实就是静态页面而已,淡定。最近很忙。。。</p>			
-		</div>
-		<div  style="color: #3b5998">
-			<p align="left">经过长久的摸索，在爬了好几个坑，买了大半年服务器之后，总算是折腾出个静态页面了</p>
-			<p align="left">这个已经不是用服务器搭建的了！功力不够，所以我的服务器就暂时没续费。先这样用着吧</p>
-			<p align="left">毕竟这是万里长征第一步啊！且行且努力！！慢慢来</p>
-		</div>
-		<p style="color: #cccccc">要问我是谁？嗯！你可以叫我+Ming爸爸</p>
-		<a href="https://github.com/hank0chan/blog">我的GitHub博客</a>&nbsp;学习,分享<br/><br/>
-		<a href="http://blog.csdn.net/hank_chan">我的CSDN博客</a>准备弃用<br/>
-		<p>以下链接纯粹为了装逼，可以忽略</p>
-		微博:&nbsp;<a href="http://weibo.com/338485677">My Weibo Home</a><br/><br/>
-		推特:&nbsp;<a href="https://twitter.com/hankchan101">My Twitter Home</a><br/><br/>
-		脸书:&nbsp;<a href="https://www.facebook.com/hankchan101">My Facebook Home</a>&nbsp;（自从看了电影社交网络就对Facebook甚有好感呀）<br/>
-		<p style="color: red">呃。。对了！如果你不会翻墙，当然是访问不了肥死不可和推特的，可以考虑花钱买个VPN去访问。但是我等渣渣程序猿比较舍不得浪费钱。。想免费翻墙的话，那就用我现在用的方法吧！</p>
-    	<a href="https://github.com/hank0chan/blog/tree/master/my_note_docs">免费翻墙点我我我我我我</a>查看:简单的翻墙方法说明.md
+<head>
+    <meta charset="UTF-8">
+    <title>Hank Chan 个人网站</title>
+    <style>
+        #header {
+            background-color: #3b5998;
+            color:white;
+            text-align:center;
+            padding:5px;
+        }
+        #nav {
+            line-height:30px;
+            background-color:#eeeeee;
+            height:450px;
+            width:150px;
+            float:left;
+            padding:5px;
+        }
+        #section {
+            width:800px;
+            float: left;
+            text-align:left;
+            padding:10px;
+        }
+        #footer {
+            background-color:#3b5998;
+            color:white;
+            clear:both;
+            text-align:center;
+            padding:5px;
+        }
+        #section div{
+            display: none;
+        }
+    </style>
+    <!--<script src="js/jquery-1.12.3.js"></script>-->
+    <script>
+        window.onload = function () {
+            var oNav = document.getElementById('nav');
+            var oSection = document.getElementById('section');
+            var aNav = oNav.getElementsByTagName('p');
+            var aSection = oSection.getElementsByTagName('div');
+            for(var i = 0; i < aNav.length; i++) {
+                aNav[i].index = i;
+                aNav[i].onmouseover=function () {
+                    <!--  先让所有的都隐藏起来 -->
+                    for(var j = 0; j < aNav.length; j++) {
+                        aNav[j].className = '';
+                        aSection[j].style.display = 'none';
+                    }
+                    <!-- 然后再显示，this表示当前事件的对象（在此就是被onclick的对象） -->
+                    this.className='active';
+                    aSection[this.index].style.display='block';
+                    document.getElementById('welcome').style.display='none';
+                };
+            }
+        };
+    </script>
+</head>
+<body>
 
-		<p>Not Only a Java & C# Software Development Programmer</p>
-		<p style="color: brown">Contact me: hankchan101@gmail.com</p>
-		<p style="color: brown">最近抽空在搞个网站，还在筹划建设中。。敬请期待！<a href="https://huhuhahi.com">huhuhahi.com</a></p>
-	</body>
+<div id="header">
+    <h1>Hank Chan Person Site</h1>
+    <p align="right" style="color: #cccccc">Not Only a Java & C# Software Development Programmer</p>
+</div>
+
+<div id="nav">
+    <p>我的Github博客</p>
+    <p>我的CSDN博客</p>
+    <p>我的微博</p>
+    <p>Twitter</p>
+    <p>Facebook</p>
+    <p>我要翻墙</p>
+    <p>Contact Me</p>
+    <p>Others</p>
+</div>
+
+<div id="section">
+    <h2>Hello World!</h2>
+    <p id="welcome">Welcome to my person site..</p>
+    <div>
+        <a href="https://github.com/hank0chan/blog">Github博客</a><br/><br/>
+        <p>只能利用点工作之余的时间整理，资料比较杂乱，挑剔不得。</p>
+        <p>后面会持续更新一些我自己写的笔记，工作中随手一记，错漏之处请大家指正，互相学习。</p>
+    </div>
+    <div>
+        <a href="http://blog.csdn.net/hank_chan">CSDN博客</a><br/><br/>
+        <p>通信专业的java爱好者，闲来记录分享一下自己学习java的一些经历。（准备弃用）</p>
+    </div>
+    <div>
+        <a href="http://weibo.com/338485677">新浪微博</a><br/><br/>
+        <p>*尼玛***！老子不玩微博了****微博开发者工具！！！！！！！！！！！！！！水水水</p>
+    </div>
+    <div>
+        <a href="https://twitter.com/hankchan101">Twitter Home</a><br/><br/>
+        <p>可以看小罗！可以看C罗！可以看史泰龙！还可以看希拉里和特朗普撕逼！！</p>
+    </div>
+    <div>
+        <a href="https://www.facebook.com/hankchan101">Facebook Home</a><br/><br/>
+        （自从看了电影社交网络就对Facebook甚有好感呀）
+    </div>
+    <div>
+        <p style="color: red">呃。。对了！如果你不会翻墙，当然是访问不了肥死不可和推特的，可以考虑花钱买个VPN去访问。但是我等渣渣程序猿比较舍不得浪费钱。。想免费翻墙的话，那就用我现在用的方法吧！</p>
+        <a href="https://github.com/hank0chan/blog/tree/master/my_note_docs">免费翻墙点我我我我我我</a>查看:简单的翻墙方法说明.md
+    </div>
+    <div>
+        <p>Person site: <a href="http://hankchan.cn">hankchan.cn</a>（持续开发中..）</p>
+        <p>Email: hankchan101@gmail.com</p>
+        <p>Resume: <a href="http://hankchan.cn/resume.html">hankchan.cn/resume.html</a></p>
+    </div>
+    <div>
+        <p style="color: #3b5998;">经过长久的摸索，在爬了好几个坑，买了大半年服务器之后，总算是折腾出个静态页面了</p>
+        <p style="color: #3b5998;">这个已经不是用服务器搭建的了！功力不够，所以我的服务器就暂时没续费。先这样用着吧</p>
+        <p style="color: #3b5998;">毕竟这是万里长征第一步啊！且行且努力！！慢慢来</p>
+        <p style="color: #cccccc">要问我是谁？嗯！你可以叫我+Ming爸爸</p>
+    </div>
+</div>
+
+<div id="footer">
+    All Copyright hankchan.cn
+</div>
+
+</body>
 </html>
