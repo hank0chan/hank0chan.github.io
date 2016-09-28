@@ -40,7 +40,7 @@
         window.onload = function () {
             var oNav = document.getElementById('nav');
             var oSection = document.getElementById('section');
-            var aNav = oNav.getElementsByTagName('p');
+            var aNav = oNav.getElementsByTagName('div');
             var aSection = oSection.getElementsByTagName('div');
             for(var i = 0; i < aNav.length; i++) {
                 aNav[i].index = i;
@@ -49,10 +49,12 @@
                     for(var j = 0; j < aNav.length; j++) {
                         aNav[j].className = '';
                         aSection[j].style.display = 'none';
+                        aNav[j].style.backgroundColor='#eeeeee';
                     }
                     <!-- 然后再显示，this表示当前事件的对象（在此就是被onclick的对象） -->
                     this.className='active';
                     aSection[this.index].style.display='block';
+                    aNav[this.index].style.backgroundColor='#BEBEBE';<!--#BEBEBE #696969-->
                     document.getElementById('welcome').style.display='none';
                 };
             }
@@ -68,15 +70,15 @@
 </div>
 
 <div id="nav">
-    <p>我的Github博客</p>
-    <p>我的CSDN博客</p>
-    <p>学习/探索</p>
-    <p>我的微博</p>
-    <p>Twitter</p>
-    <p>Facebook</p>
-    <p>我要翻墙</p>
-    <p>Contact Me</p>
-    <p>Others</p>
+    <div><p>我的Github博客</p></div>
+    <div><p>我的CSDN博客</p></div>
+    <div><p>学习/探索</p></div>
+    <div><p>我的微博</p></div>
+    <div><p>Twitter</p></div>
+    <div><p>Facebook</p></div>
+    <div><p>我要翻墙</p></div>
+    <div><p>Contact Me</p></div>
+    <div><p>Others</p></div>
 </div>
 
 <div id="section">
